@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:leon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="16dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/logo"
+                leon:civ_border_color="#FFFFFF"
+                leon:civ_border_width="2dp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/givebtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/money"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/themoney"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="余额"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/theprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:gravity="right"
+                android:text="7500"
+                android:textSize="20sp"
+                android:textColor="#938F8F"/>
+
+            <TextView
+                android:id="@+id/theyuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="元"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fpname"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="收货人"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/fpnametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="40dp"
+                android:text="cz"
+                android:textSize="20sp"
+                android:textColor="#938F8F"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/fpphone"
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="联系方式"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text=""
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/fpnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="4008208820"
+                android:textSize="20sp"
+                android:textColor="#938F8F"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fpadd"
+                android:layout_width="103dp"
+                android:layout_height="79dp"
+                android:layout_marginTop="20dp"
+
+                android:background="#F0F8FF"
+                android:gravity="center"
+                android:text="收件地址"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/fpaddname"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="1dp"
+                android:background="#F0F8FF"
+                android:gravity="right"
+                android:paddingTop="20dp"
+                android:paddingRight="50dp"
+                android:text="西南财经大学"
+                android:textColor="#545050"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+<!--        作用，增加长度，防止底部导航栏挡住上面的内容-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
