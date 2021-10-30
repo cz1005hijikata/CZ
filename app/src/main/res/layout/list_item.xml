@@ -21,7 +21,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="桌子"
+            android:text="零食"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -32,7 +32,7 @@
             android:layout_below="@+id/title"
             android:layout_marginTop="10dp"
             android:text="价格："
-            android:textColor="#FF8F03"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/tv_price"
             android:text="1000"
-            android:textColor="#FF8F03"
+            android:textColor="#000000"
             android:textSize="20sp" />
     </RelativeLayout>
 </RelativeLayout>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#74B9FF"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <Button
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="45dp"
-        android:text="日历"
+        android:text="当前日期"
         android:textColor="#131313"
         android:textSize="24dp" />
 </RelativeLayout>

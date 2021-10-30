@@ -43,7 +43,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class PersonFragment extends Fragment {
     int num = 0;
-    int money = 7500;
+    int money = 520;
     public static final int TAKE_PHOTO = 1;
     public static final int CHOOSE_PHOTO = 2;
     private ImageView picture;
@@ -100,7 +100,7 @@ public class PersonFragment extends Fragment {
     private void showPop() {
         View bottomView = View.inflate(getActivity(), R.layout.layout_bottom_dialog, null);
         TextView mAlbum = bottomView.findViewById(R.id.tv_album);
-        TextView mCamera = bottomView.findViewById(R.id.tv_camera);
+
         TextView mCancel = bottomView.findViewById(R.id.tv_cancel);
 
         pop = new PopupWindow(bottomView, -1, -2);
@@ -123,9 +123,7 @@ public class PersonFragment extends Fragment {
         //设置窗体动画
         pop.setAnimationStyle(R.style.main_menu_photo_anim);
         //指定父视图，显示在父控件的某个位置
-        pop.showAtLocation(getActivity().getWindow().getDecorView(), Gravity.BOTTOM, 0, 0);
-
-        View.OnClickListener clickListener = new View.OnClickListener() {
+        pop.showAtLocation(getActivity().getWindow().getDecorView(), Gravity.BOTTOM, 0, 0);  View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
@@ -143,26 +141,7 @@ public class PersonFragment extends Fragment {
                         }
                         break;
                     //拍照
-                    case R.id.tv_camera:
-                        //创建File对象，用于存储拍照后的图片
-                        File outputImage = new File(getActivity().getExternalCacheDir(), "logo.png");
-                        try {
-                            if (outputImage.exists())
-                                outputImage.delete();
-                            outputImage.createNewFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                        if (Build.VERSION.SDK_INT >= 24) {
-                            imageUri = FileProvider.getUriForFile(getActivity(),
-                                    "com.example.ClqShopping.fileProvider", outputImage);
-                        } else {
-                            imageUri = Uri.fromFile(outputImage);
-                        }
-                        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                        startActivityForResult(intent, TAKE_PHOTO);
-                        break;
+
                     case R.id.tv_cancel:
                         //取消
                         closePopupWindow();
@@ -171,7 +150,7 @@ public class PersonFragment extends Fragment {
                 closePopupWindow();
             }
         };
-        mCamera.setOnClickListener(clickListener);
+
         mAlbum.setOnClickListener(clickListener);
         mCancel.setOnClickListener(clickListener);
     }
@@ -213,90 +192,15 @@ public class PersonFragment extends Fragment {
                     }
                 }
                 break;
-            case CHOOSE_PHOTO:
-                if (resultCode == RESULT_OK) {
-                    //判断手机系统版本，4.4及以上系统使用该方法
-                    if (Build.VERSION.SDK_INT >= 19) {
-                        handleImageOnKitKat(data);
-                    } else {
-                        //4.4以下使用
-                        handleImageBeforeKitKat(data);
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-    }
 
-    //>=19操作
-    @TargetApi(19)
-    private void handleImageOnKitKat(Intent data) {
-        String imagePath = null;
-        Uri uri = data.getData();
-        Log.d("TestHow", ">=19");
-        if (DocumentsContract.isDocumentUri(getActivity(), uri)) {
-            //如果是Document类型的Uri，则通过document id 处理
-            String docId = DocumentsContract.getDocumentId(uri);
-            if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
-                String id = docId.split(":")[1]; //解析出数字格式的id
-                String selection = MediaStore.Images.Media._ID + "=" + id;
-                imagePath = getImagePath(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
-            } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
-                Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(docId));
-                imagePath = getImagePath(contentUri, null);
-            } else if ("content".equalsIgnoreCase(uri.getScheme())) {
-                //如果是document类型的Uri，普通方法处理
-                imagePath = getImagePath(uri, null);
-            } else if ("file".equalsIgnoreCase(uri.getScheme())) {
-                //如果是file类型的Uri，直接获取图片路径即可
-                imagePath = uri.getPath();
-            }
-            displayImage(imagePath);
-        }
-    }
 
-    //<19的操作
-    private void handleImageBeforeKitKat(Intent data) {
-        Log.d("TestHow", "<19");
-        Uri uri = data.getData();
-        String imagePath = getImagePath(uri, null);
-        displayImage(imagePath);
-    }
 
-    private String getImagePath(Uri uri, String selection) {
-        String path = null;
-        //通过Uri 和selection获取真正的图片路径
-        Cursor cursor = getActivity().getContentResolver().query(
-                uri, null, selection, null, null);
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
-                path = cursor.getString(
-                        cursor.getColumnIndex(MediaStore.Images.Media.DATA));
-            }
-            cursor.close();
-        }
-        Log.d("TestHow", "success getImagePath");
-        return path;
-    }
-
-    private void displayImage(String path) {
-        if (path != null) {
-            Bitmap bitmap = BitmapFactory.decodeFile(path);
-            picture.setImageBitmap(bitmap);
-            Toast.makeText(getActivity(), "头像更换成功", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getActivity(), "头像更换失败", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    //关闭弹出更换图像的菜单
-    public void closePopupWindow() {
+        }}
+    public void closePopupWindow () {
         if (pop != null && pop.isShowing()) {
             pop.dismiss();
             pop = null;
         }
     }
 }
+

@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">cz专属商城</string>
-    <string name="title_shopping">商城</string>
+    <string name="app_name">cz商城物流查询</string>
+    <string name="title_shopping">已购</string>
     <string name="title_me">个人中心</string>
     <string name="about">关于应用</string>
-    <string name="calendar">查看日历</string>
+    <string name="calendar">查询当前日期</string>
     <string name="exit">退出</string>
     <string name="username">C L Q vip</string>
-    <string name="money">点我领取红包</string>
+    <string name="money">点击签到还有红包领取哦</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
 </resources>
