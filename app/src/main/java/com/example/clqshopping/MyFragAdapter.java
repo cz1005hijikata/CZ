@@ -13,6 +13,7 @@ public class MyFragAdapter extends FragmentStatePagerAdapter {
     Context context;
     List<Fragment> listFragment;
 
+
     public MyFragAdapter(FragmentManager fm,Context context,List<Fragment> listFragment){
         super(fm);
         this.context=context;

@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
                 //退出应用
+
             case R.id.exit_item:
                 new AlertDialog.Builder(MainActivity.this).setTitle("温馨提示").setMessage("确定退出应用")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {

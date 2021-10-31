@@ -14,6 +14,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         //两秒后进入主页面
         new Handler().postDelayed(new Runnable() {
+
             @Override
             public void run() {
                 //启动MainActivity主页面，这段代码是在主线程执行

@@ -26,6 +26,7 @@ public class ShoppingFragment extends Fragment {
     //价格
     String[] prices = new String[]{"109元/件 共一件", "129元/件 共一件", "19.8元/袋 共三袋", "60.9元/件 共一件", "38元/盒 共两盒",
             "89.8元/两盒 共两盒",""};
+
     //图片集合
     int[] icons = new int[]{R.drawable.szzs, R.drawable.lppz, R.drawable.wxl,
             R.drawable.wl, R.drawable.hll, R.drawable.lzq,0};

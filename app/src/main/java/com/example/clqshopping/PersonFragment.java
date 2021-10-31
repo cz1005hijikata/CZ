@@ -48,6 +48,7 @@ public class PersonFragment extends Fragment {
     public static final int CHOOSE_PHOTO = 2;
     private ImageView picture;
     private Uri imageUri;
+
     private PopupWindow pop;
 
     public PersonFragment() {
